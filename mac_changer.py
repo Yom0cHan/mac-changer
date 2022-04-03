@@ -1,10 +1,9 @@
 #!usr/bin/env python
 
-import subprocess
-import optparse
-import re
+import subprocess, optparse, re
 
 def get_arguments():
+    
     parser = optparse.OptionParser()
     parser.add_option("-i", "--interface", dest="interface", help="Interface to change it's MAC address")
     parser.add_option("-m", "--mac", dest="new_mac", help="your MAC address")
@@ -17,6 +16,7 @@ def get_arguments():
     return options
 
 def change_mac(interface, new_mac):
+    
     str(new_mac)
     print("[+] Changing the MAC address for " + interface + " to " + new_mac)
     subprocess.call(["ifconfig", interface, "down"])
@@ -24,8 +24,10 @@ def change_mac(interface, new_mac):
     subprocess.call(["ifconfig", interface, "up"])
 
 def get_current_mac(interface):
+    
     ifconfig_result = subprocess.check_output(["ifconfig", interface])
-    mac_address_shearch_result = re.search(br"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", ifconfig_result)
+    ifconfig_text = ifconfig_result.decode('utf-8')
+    mac_address_shearch_result = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", ifconfig_text)
     if mac_address_shearch_result:
         return mac_address_shearch_result.group(0)
     else:
