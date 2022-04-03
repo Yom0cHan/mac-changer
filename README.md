@@ -7,7 +7,7 @@ import subprocess, optparse, re
 ```
 <h3 text align="center"> Usage </h3>
 
-```bash
+```yml
 Usage: mac_changer.py [options]
 
 Options:
