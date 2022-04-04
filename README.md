@@ -1,5 +1,5 @@
 # Mac changer
-A simple script in python which rapidly changes you mac address as you whish.
+A simple script in python for debian which rapidly changes you mac address as you whish.
 <h3 text align="center"> Modules </h3>
 
 ```py
