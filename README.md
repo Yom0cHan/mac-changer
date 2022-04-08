@@ -1,3 +1,5 @@
+![img](https://img.shields.io/badge/-python%203.9-blue) ![img](https://img.shields.io/badge/-Debian-yellowgreen)
+
 # Mac changer
 A simple script in python for debian which rapidly changes you mac address as you whish.
 <h3 text align="center"> Modules </h3>
